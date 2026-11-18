@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Im Brüel – Prototyp E (Hell &amp; zugewandt)</title>
+  <script>
+    document.documentElement.classList.add('ib-js');
+    try { if (localStorage.getItem('ib-font') === 'lg') document.documentElement.classList.add('ib-font-lg'); } catch (e) {}
+  </script>
+
+  <!-- Nur Demo: Ersatzschrift für Calluna Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image" href="assets/img/entwurf-e/hero.jpg">
+
+  <link rel="stylesheet" href="assets/css/ib-base.css?v=202611181259">
+  <link rel="stylesheet" href="assets/css/ib-angebote.css?v=202611181259">
+  <link rel="stylesheet" href="assets/css/ib-page-e.css?v=202611181259">
+</head>
+<body class="ib-page ib-page--e">
+
+<!-- @section hero -->
+<div class="e-top" data-e-hero>
+  <header class="e-header" data-e-hero-anim="nav">
+    <a class="e-header__logo" href="#"><img src="assets/img/logo-dunkel.svg" width="118" height="61" alt="Im Brüel – Startseite"></a>
+
+    <nav class="e-header__nav" id="e-menu" aria-label="Hauptnavigation" data-e-menu>
+      <ul class="e-header__menu">
+        <li><a href="#">Zuhause im Brüel</a></li>
+        <li><a href="#">Pflege</a></li>
+        <li><a href="#">Eintritt</a></li>
+        <li><a href="#">Karriere</a></li>
+        <li><a href="#">Über uns</a></li>
+      </ul>
+    </nav>
+
+    <div class="e-header__actions">
+      <!-- Barrierefreiheit: Schrift grösser (Zustand wird gemerkt) -->
+      <button class="e-a11y" type="button" aria-pressed="false" data-ib-fontsize
+              aria-label="Schrift vergrössern" title="Schrift vergrössern">
+        <span class="e-a11y__small" aria-hidden="true">A</span><span class="e-a11y__big" aria-hidden="true">A</span>
+      </button>
+      <a class="ib-btn e-header__cta" href="#kontakt">Beratung</a>
+      <button class="e-header__burger" type="button" aria-expanded="false" aria-controls="e-menu" aria-label="Menü öffnen" data-e-menu-toggle>
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="e-hero" aria-labelledby="e-hero-title">
+    <div class="e-hero__frame">
+      <div class="e-hero__bg" data-e-hero-bg>
+        <img src="assets/img/entwurf-e/hero.jpg" width="2200" height="1467"
+             alt="Ein Pflegefachmann und ein Bewohner spielen lachend Schach."
+             fetchpriority="high" decoding="async" data-e-hero-img>
+      </div>
+
+      <div class="e-hero__content" data-e-hero-content>
+        <h1 class="e-hero__title" id="e-hero-title" data-e-hero-title>Das Alterszentrum<br>mitten in Aesch.</h1>
+        <a class="ib-btn ib-btn--green ib-btn--arrow" href="#angebote" data-e-hero-anim="btn">
+          Passendes Angebot finden
+          <span class="ib-btn__arrow" aria-hidden="true"><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h12M7 0l5 5-5 5"/></svg></span>
+        </a>
+      </div>
+
+      <!-- Freie Entlastungszimmer: Zahl kommt im Theme aus einem Feld (z. B. ACF / Options-Seite); -->
+      <a class="e-hero__card" href="#kontakt" data-e-hero-anim="card" data-e-rooms data-free="3">
+        <strong class="e-hero__count"><span class="e-hero__num" data-e-rooms-num>3</span> Zimmer <span class="is-green">frei</span></strong>
+        <p class="ib-small e-hero__card-text">Entlastungszimmer für einige Tage oder Wochen – jetzt anfragen.</p>
+        <span class="e-hero__updated"><span class="e-hero__pulse" aria-hidden="true"></span>Stand heute</span>
+      </a>
+    </div>
+  </section>
+</div>
+<!-- @endsection -->
+
+<main>
+<!-- @section attitude -->
+<section class="ib-container e-attitude" aria-labelledby="e-attitude-label">
+  <p class="ib-pill-label" id="e-attitude-label" data-ib-reveal>Warum Im Brüel</p>
+  <p class="e-attitude__text" data-e-words>Im Brüel geht es nicht um schnelle Lösungen. Wir glauben, dass gutes Leben im Alter aus Fachkompetenz, Zeit füreinander und echter Gemeinschaft entsteht. Wir begleiten Sie dabei.</p>
+  <div class="e-attitude__row" data-e-fan>
+    <figure class="e-attitude__img e-attitude__img--1"><img src="assets/img/entwurf-e/haltung-1.jpg" width="400" height="267" alt="Bewohner und Pfleger beim Schach" loading="lazy"></figure>
+    <figure class="e-attitude__img e-attitude__img--2"><img src="assets/img/entwurf-e/haltung-2.jpg" width="500" height="333" alt="Lachender Bewohner" loading="lazy"></figure>
+    <figure class="e-attitude__img e-attitude__img--3"><img src="assets/img/entwurf-e/haltung-3.jpg" width="640" height="427" alt="Zwei Bewohnende schauen ein Fotoalbum an" loading="lazy"></figure>
+    <figure class="e-attitude__img e-attitude__img--4"><img src="assets/img/entwurf-e/haltung-4.jpg" width="500" height="333" alt="Pflegerin und Bewohnerin beim Kaffee" loading="lazy"></figure>
+    <figure class="e-attitude__img e-attitude__img--5"><img src="assets/img/entwurf-e/haltung-5.jpg" width="400" height="267" alt="Lächelnde Mitarbeiterin" loading="lazy"></figure>
+  </div>
+  <a class="ib-btn ib-btn--green ib-btn--arrow" href="#" data-ib-reveal>
+    Mehr über uns
+    <span class="ib-btn__arrow" aria-hidden="true"><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h12M7 0l5 5-5 5"/></svg></span>
+  </a>
+</section>
+<!-- @endsection -->
+
+<!-- @section help -->
+<section class="ib-container e-band e-help" aria-labelledby="e-help-title">
+  <div class="e-head">
+    <p class="ib-pill-label" data-ib-reveal>Unterstützung finden</p>
+    <h2 class="ib-h2" id="e-help-title" data-ib-reveal>Wie können wir Ihnen helfen?</h2>
+  </div>
+  <ul class="e-help__list" data-ib-stagger>
+    <li data-ib-item>
+      <a class="e-help__card" href="#angebote">
+        <span class="e-help__body">
+          <h3 class="e-help__title">Ich suche einen Platz für mich</h3>
+          <span class="e-help__text">Zimmer, Alltag und Pflege – so leben Sie bei uns.</span>
+        </span>
+        <span class="e-help__more"><span class="e-help__more-label">Mehr erfahren</span><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h12M7 0l5 5-5 5"/></svg></span>
+      </a>
+    </li>
+    <li data-ib-item>
+      <a class="e-help__card" href="#angebote">
+        <span class="e-help__body">
+          <h3 class="e-help__title">Ich suche einen Platz für einen Angehörigen</h3>
+          <span class="e-help__text">Was Ihre Mutter oder Ihr Vater bei uns erwartet – und was es kostet.</span>
+        </span>
+        <span class="e-help__more"><span class="e-help__more-label">Mehr erfahren</span><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h12M7 0l5 5-5 5"/></svg></span>
+      </a>
+    </li>
+    <li data-ib-item>
+      <a class="e-help__card" href="#kontakt">
+        <span class="e-help__body">
+          <h3 class="e-help__title">Ich brauche kurzfristig ein Entlastungszimmer</h3>
+          <span class="e-help__text">Entlastung für einige Tage oder Wochen. Wir sagen Ihnen rasch, was frei ist.</span>
+        </span>
+        <span class="e-help__more"><span class="e-help__more-label">Mehr erfahren</span><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h12M7 0l5 5-5 5"/></svg></span>
+      </a>
+    </li>
+  </ul>
+</section>
+<!-- @endsection -->
+
+<!-- @section why -->
+<section class="ib-container e-why" aria-labelledby="e-why-title">
+  <div class="e-why__box">
+    <figure class="e-why__media"><img src="assets/img/entwurf-e/warum.jpg" width="2000" height="1333" alt="Eine Mitarbeiterin im Beratungsgespräch" loading="lazy" data-ib-parallax></figure>
+    <div class="e-why__card" data-e-why-card>
+      <h2 class="ib-h2" id="e-why-title">Pflege, die sich<br>Zeit nimmt.</h2>
+      <ul class="e-why__list">
+        <li class="e-why__item">
+          <h3>Fachlich und herzlich</h3>
+          <p class="ib-small">Pflege rund um die Uhr – fachlich auf dem neuesten Stand und mit echtem Interesse am Menschen.</p>
+        </li>
+        <li class="e-why__item"><h3>Selbstbestimmt leben</h3></li>
+        <li class="e-why__item"><h3>Transparente Kosten</h3></li>
+      </ul>
+      <a class="ib-btn ib-btn--green ib-btn--arrow" href="#kontakt">
+        Beratung vereinbaren
+        <span class="ib-btn__arrow" aria-hidden="true"><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h12M7 0l5 5-5 5"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- @endsection -->
+
+<!-- @section angebote -->
+<section class="ib-angebote ib-angebote--photo" id="angebote" data-ib-angebote aria-labelledby="ib-angebote-1-title">
+    <div class="ib-angebote__inner">
+
+      <header class="ib-angebote__head">
+        <p class="ib-pill-label" data-reveal="head">Unsere Angebote</p>
+        <h2 class="ib-angebote__title" id="ib-angebote-1-title" data-reveal="head">
+          Für jede Lebenslage<br>der passende Platz.
+        </h2>
+      </header>
+
+      <div class="ib-angebote__tabs" role="tablist" aria-label="Angebote filtern" data-reveal="head">
+        <span class="ib-angebote__tab-indicator" data-tab-indicator aria-hidden="true"></span>
+        <button class="ib-angebote__tab" type="button" role="tab" id="ib-angebote-1-tab-0" aria-controls="ib-angebote-1-panel-0" aria-selected="true" tabindex="0">Leben &amp; Wohnen</button>
+        <button class="ib-angebote__tab" type="button" role="tab" id="ib-angebote-1-tab-1" aria-controls="ib-angebote-1-panel-1" aria-selected="false" tabindex="-1">Pflege &amp; Betreuung</button>
+      </div>
+
+      <div class="ib-angebote__grid" data-angebote-grid>
+
+        <ul class="ib-angebote__panel" role="tabpanel" id="ib-angebote-1-panel-0" aria-labelledby="ib-angebote-1-tab-0">
+          <li class="ib-angebote__item">
+            <a class="ib-card ib-card--photo" href="#">
+              <span class="ib-card__shadow" aria-hidden="true"></span>
+              <span class="ib-card__media"><img class="ib-card__img" src="assets/img/entwurf-e/angebote/wohnen-pflege.jpg" width="1400" height="933" alt="Eine Bewohnerin und ein Bewohner schauen gemeinsam ein Fotoalbum an." loading="lazy" decoding="async"></span>
+              <span class="ib-card__arrow" aria-hidden="true"><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h10M7 1l4 4-4 4"/></svg></span>
+              <div class="ib-card__body">
+                <h3 class="ib-card__title">Wohnen &amp; Pflege</h3>
+                <p class="ib-card__text">Zimmer, Alltag und Pflege rund um die Uhr.</p>
+              </div>
+            </a>
+          </li>
+          <li class="ib-angebote__item">
+            <a class="ib-card ib-card--photo" href="#">
+              <span class="ib-card__shadow" aria-hidden="true"></span>
+              <span class="ib-card__media"><img class="ib-card__img" src="assets/img/entwurf-e/angebote/entlastungszimmer.jpg" width="1400" height="933" alt="Ein Bewohner lacht herzlich." loading="lazy" decoding="async"></span>
+              <span class="ib-card__arrow" aria-hidden="true"><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h10M7 1l4 4-4 4"/></svg></span>
+              <div class="ib-card__body">
+                <h3 class="ib-card__title">Entlastungszimmer</h3>
+                <p class="ib-card__text">Einige Tage oder Wochen – auch kurzfristig.</p>
+              </div>
+            </a>
+          </li>
+          <li class="ib-angebote__item">
+            <a class="ib-card ib-card--photo" href="#">
+              <span class="ib-card__shadow" aria-hidden="true"></span>
+              <span class="ib-card__media"><img class="ib-card__img" src="assets/img/entwurf-e/angebote/demenz-villa-theresa.jpg" width="1400" height="933" alt="Eine Pflegerin und eine Bewohnerin lachen zusammen." loading="lazy" decoding="async"></span>
+              <span class="ib-card__arrow" aria-hidden="true"><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h10M7 1l4 4-4 4"/></svg></span>
+              <div class="ib-card__body">
+                <h3 class="ib-card__title">Demenz-Heimat Villa Theresa</h3>
+                <p class="ib-card__text">Geborgenheit und Garten für Menschen mit Demenz.</p>
+              </div>
+            </a>
+          </li>
+          <li class="ib-angebote__item">
+            <a class="ib-card ib-card--photo" href="#">
+              <span class="ib-card__shadow" aria-hidden="true"></span>
+              <span class="ib-card__media"><img class="ib-card__img" src="assets/img/entwurf-e/angebote/tageszentrum-taz.jpg" width="1400" height="933" alt="Ein Gast und ein Betreuer spielen Schach." loading="lazy" decoding="async"></span>
+              <span class="ib-card__arrow" aria-hidden="true"><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h10M7 1l4 4-4 4"/></svg></span>
+              <div class="ib-card__body">
+                <h3 class="ib-card__title">Tageszentrum TAZ</h3>
+                <p class="ib-card__text">Tagsüber begleitet, abends wieder zu Hause.</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Platzhalter-Inhalte und -Fotos: in Figma nicht definiert -->
+        <ul class="ib-angebote__panel" role="tabpanel" id="ib-angebote-1-panel-1" aria-labelledby="ib-angebote-1-tab-1" hidden>
+          <li class="ib-angebote__item">
+            <a class="ib-card ib-card--photo" href="#">
+              <span class="ib-card__shadow" aria-hidden="true"></span>
+              <span class="ib-card__media"><img class="ib-card__img" src="assets/img/entwurf-e/angebote/pflege-rund-um-die-uhr.jpg" width="900" height="466" alt="Eine Pflegefachfrau im Gang des Hauses." loading="lazy" decoding="async"></span>
+              <span class="ib-card__arrow" aria-hidden="true"><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h10M7 1l4 4-4 4"/></svg></span>
+              <div class="ib-card__body">
+                <h3 class="ib-card__title">Pflege rund um die Uhr</h3>
+                <p class="ib-card__text">[Platzhalter] Fachliche Pflege, Tag und Nacht.</p>
+              </div>
+            </a>
+          </li>
+          <li class="ib-angebote__item">
+            <a class="ib-card ib-card--photo" href="#">
+              <span class="ib-card__shadow" aria-hidden="true"></span>
+              <span class="ib-card__media"><img class="ib-card__img" src="assets/img/entwurf-e/angebote/therapie-aktivierung.jpg" width="900" height="459" alt="Eine Mitarbeiterin im Garten vor dem Haus." loading="lazy" decoding="async"></span>
+              <span class="ib-card__arrow" aria-hidden="true"><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h10M7 1l4 4-4 4"/></svg></span>
+              <div class="ib-card__body">
+                <h3 class="ib-card__title">Therapie &amp; Aktivierung</h3>
+                <p class="ib-card__text">[Platzhalter] Bewegung, Gedächtnis und Alltag stärken.</p>
+              </div>
+            </a>
+          </li>
+          <li class="ib-angebote__item">
+            <a class="ib-card ib-card--photo" href="#">
+              <span class="ib-card__shadow" aria-hidden="true"></span>
+              <span class="ib-card__media"><img class="ib-card__img" src="assets/img/entwurf-e/angebote/kultur-begegnung.jpg" width="900" height="470" alt="Eine Mitarbeiterin im Salon mit Bildern an der Wand." loading="lazy" decoding="async"></span>
+              <span class="ib-card__arrow" aria-hidden="true"><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h10M7 1l4 4-4 4"/></svg></span>
+              <div class="ib-card__body">
+                <h3 class="ib-card__title">Kultur &amp; Begegnung</h3>
+                <p class="ib-card__text">[Platzhalter] Konzerte, Feste und Ausflüge.</p>
+              </div>
+            </a>
+          </li>
+          <li class="ib-angebote__item">
+            <a class="ib-card ib-card--photo" href="#">
+              <span class="ib-card__shadow" aria-hidden="true"></span>
+              <span class="ib-card__media"><img class="ib-card__img" src="assets/img/entwurf-e/angebote/beratung-angehoerige.jpg" width="1400" height="933" alt="Eine Beraterin im Gespräch mit einem Angehörigen." loading="lazy" decoding="async"></span>
+              <span class="ib-card__arrow" aria-hidden="true"><svg viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h10M7 1l4 4-4 4"/></svg></span>
+              <div class="ib-card__body">
+                <h3 class="ib-card__title">Beratung Angehörige</h3>
+                <p class="ib-card__text">[Platzhalter] Wir begleiten auch Sie.</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+<!-- @endsection -->
+
+<!-- @section voices -->
+<section class="ib-container e-band e-voices" aria-labelledby="e-voices-title">
+  <div class="e-head">
+    <p class="ib-pill-label" data-ib-reveal>Stimmen</p>
+    <h2 class="ib-h2" id="e-voices-title" data-ib-reveal>Was Bewohnende und Angehörige sagen</h2>
+  </div>
+  <!-- Platzhalter-Zitate aus Figma: echte Stimmen mit Einverständnis einholen -->
+  <ul class="ib-slider__viewport e-voices__list" data-ib-stagger>
+    <li data-ib-item>
+      <figure class="e-voice">
+        <blockquote><p>«Zitat einer/eines Angehörige – Platzhalter. Echte Stimmen mit Einverständnis einholen.»</p></blockquote>
+        <figcaption><strong>Vorname N.</strong><span class="ib-small">Angehörige</span></figcaption>
+      </figure>
+    </li>
+    <li data-ib-item>
+      <figure class="e-voice">
+        <blockquote><p>«Zitat einer/eines Bewohner – Platzhalter. Echte Stimmen mit Einverständnis einholen.»</p></blockquote>
+        <figcaption><strong>Vorname N.</strong><span class="ib-small">Bewohner</span></figcaption>
+      </figure>
+    </li>
+    <li data-ib-item>
+      <figure class="e-voice">
+        <blockquote><p>«Zitat einer/eines Bewohnerin – Platzhalter. Echte Stimmen mit Einverständnis einholen.»</p></blockquote>
+        <figcaption><strong>Vorname N.</strong><span class="ib-small">Bewohnerin</span></figcaption>
+      </figure>
+    </li>
+  </ul>
+</section>
+<!-- @endsection -->
+
+<!-- @section video -->
+<section class="ib-container e-video" aria-labelledby="e-video-title" data-ib-slider>
+  <div class="e-head">
+    <p class="ib-pill-label" data-ib-reveal>Ein Tag im Brüel</p>
+    <h2 class="ib-h2" id="e-video-title" data-ib-reveal>Ihre Fragen – in zwei Minuten beantwortet</h2>
+  </div>
+
+  <ul class="ib-slider__viewport e-video__viewport" data-slider-viewport data-ib-reveal="scale" aria-label="Videos">
+    <li class="e-slide">
+      <img class="e-slide__img" src="assets/img/entwurf-e/video-1.jpg" width="2000" height="1043" alt="" loading="lazy">
+      <button class="e-slide__play" type="button" aria-label="Video abspielen: Wie findet man das richtige Pflegeheim?"><svg viewBox="0 0 18 20"><path d="M18 10 0 20V0z" fill="#1a5048"/></svg></button>
+      <div class="e-slide__caption"><span class="ib-small">Video 1 von 5</span><h3 class="ib-h3">Wie findet man das richtige Pflegeheim?</h3></div>
+    </li>
+    <li class="e-slide">
+      <span class="e-slide__placeholder">Video-Still 2 (ersetzen)</span>
+      <button class="e-slide__play" type="button" aria-label="Video abspielen: Was erwartet mich im Alterszentrum?"><svg viewBox="0 0 18 20"><path d="M18 10 0 20V0z" fill="#1a5048"/></svg></button>
+      <div class="e-slide__caption"><span class="ib-small">Video 2 von 5</span><h3 class="ib-h3">Was erwartet mich im Alterszentrum?</h3></div>
+    </li>
+    <li class="e-slide">
+      <span class="e-slide__placeholder">Video-Still 3 (ersetzen)</span>
+      <button class="e-slide__play" type="button" aria-label="Video abspielen: Die Kostenfrage, die sich alle stellen"><svg viewBox="0 0 18 20"><path d="M18 10 0 20V0z" fill="#1a5048"/></svg></button>
+      <div class="e-slide__caption"><span class="ib-small">Video 3 von 5</span><h3 class="ib-h3">Die Kostenfrage, die sich alle stellen</h3></div>
+    </li>
+    <li class="e-slide">
+      <span class="e-slide__placeholder">Video-Still 4 (ersetzen)</span>
+      <button class="e-slide__play" type="button" aria-label="Video abspielen: Was tun, wenn es plötzlich schnell gehen muss?"><svg viewBox="0 0 18 20"><path d="M18 10 0 20V0z" fill="#1a5048"/></svg></button>
+      <div class="e-slide__caption"><span class="ib-small">Video 4 von 5</span><h3 class="ib-h3">Was tun, wenn es plötzlich schnell gehen muss?</h3></div>
+    </li>
+    <li class="e-slide">
+      <span class="e-slide__placeholder">Video-Still 5 (ersetzen)</span>
+      <button class="e-slide__play" type="button" aria-label="Video abspielen: Das Pflegeheim ist nicht das Ende"><svg viewBox="0 0 18 20"><path d="M18 10 0 20V0z" fill="#1a5048"/></svg></button>
+      <div class="e-slide__caption"><span class="ib-small">Video 5 von 5</span><h3 class="ib-h3">Das Pflegeheim ist nicht das Ende</h3></div>
+    </li>
+  </ul>
+
+  <div class="ib-slider__controls">
+    <button class="ib-slider__btn ib-slider__btn--prev" type="button" aria-label="Vorheriges Video" data-slider-prev>
+      <svg viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6H1M6 11 1 6l5-5"/></svg>
+    </button>
+    <div class="ib-slider__dots" data-slider-dots></div>
+    <button class="ib-slider__btn ib-slider__btn--next" type="button" aria-label="Nächstes Video" data-slider-next>
+      <svg viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5"/></svg>
+    </button>
+  </div>
+</section>
+<!-- @endsection -->
+
+<!-- @section faq -->
+<section class="ib-container e-band e-faq" id="kontakt" aria-label="Fragen und Ansprechpersonen">
+  <div class="e-faq__grid">
+    <div class="e-faq__col">
+      <div class="e-head e-head--left">
+        <p class="ib-pill-label" data-ib-reveal>Häufige Fragen</p>
+        <h2 class="ib-h2" data-ib-reveal>Gut zu wissen.</h2>
+      </div>
+      <!-- Fragen gemäss Layer-Namen in Figma; Antworten sind Platzhalter -->
+      <div class="e-faq__list" data-e-accordion data-ib-stagger>
+        <div class="e-faq__item is-open" data-ib-item>
+          <h3><button class="e-faq__q" type="button" aria-expanded="true" aria-controls="faq-1">Was kostet ein Platz im Brüel?<svg class="e-faq__icon" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="#50D68D"/><path d="M11 18h14" stroke="#1A5048" stroke-width="2" stroke-linecap="round"/><path class="e-faq__icon-v" d="M18 11v14" stroke="#1A5048" stroke-width="2" stroke-linecap="round"/></svg></button></h3>
+          <div class="e-faq__a" id="faq-1"><p class="ib-small">Die Kosten setzen sich aus Pension, Betreuung und Pflege zusammen. [Platzhalter – mit Tarifen ergänzen]</p></div>
+        </div>
+        <div class="e-faq__item" data-ib-item>
+          <h3><button class="e-faq__q" type="button" aria-expanded="false" aria-controls="faq-2">Wochenplan Therapie &amp; Kultur<svg class="e-faq__icon" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="#50D68D"/><path d="M11 18h14" stroke="#1A5048" stroke-width="2" stroke-linecap="round"/><path class="e-faq__icon-v" d="M18 11v14" stroke="#1A5048" stroke-width="2" stroke-linecap="round"/></svg></button></h3>
+          <div class="e-faq__a" id="faq-2"><p class="ib-small">[Platzhalter – Antwort ergänzen]</p></div>
+        </div>
+        <div class="e-faq__item" data-ib-item>
+          <h3><button class="e-faq__q" type="button" aria-expanded="false" aria-controls="faq-3">Wochenplan Essen &amp; Restaurant<svg class="e-faq__icon" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="#50D68D"/><path d="M11 18h14" stroke="#1A5048" stroke-width="2" stroke-linecap="round"/><path class="e-faq__icon-v" d="M18 11v14" stroke="#1A5048" stroke-width="2" stroke-linecap="round"/></svg></button></h3>
+          <div class="e-faq__a" id="faq-3"><p class="ib-small">[Platzhalter – Antwort ergänzen]</p></div>
+        </div>
+        <div class="e-faq__item" data-ib-item>
+          <h3><button class="e-faq__q" type="button" aria-expanded="false" aria-controls="faq-4">Wie schnell ist ein Entlastungszimmer verfügbar?<svg class="e-faq__icon" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="#50D68D"/><path d="M11 18h14" stroke="#1A5048" stroke-width="2" stroke-linecap="round"/><path class="e-faq__icon-v" d="M18 11v14" stroke="#1A5048" stroke-width="2" stroke-linecap="round"/></svg></button></h3>
+          <div class="e-faq__a" id="faq-4"><p class="ib-small">[Platzhalter – Antwort ergänzen]</p></div>
+        </div>
+        <div class="e-faq__item" data-ib-item>
+          <h3><button class="e-faq__q" type="button" aria-expanded="false" aria-controls="faq-5">Wer hilft mir bei der Finanzierung?<svg class="e-faq__icon" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="#50D68D"/><path d="M11 18h14" stroke="#1A5048" stroke-width="2" stroke-linecap="round"/><path class="e-faq__icon-v" d="M18 11v14" stroke="#1A5048" stroke-width="2" stroke-linecap="round"/></svg></button></h3>
+          <div class="e-faq__a" id="faq-5"><p class="ib-small">[Platzhalter – Antwort ergänzen]</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="e-faq__col">
+      <div class="e-head e-head--left">
+        <p class="ib-pill-label" data-ib-reveal>Ihre Ansprechpersonen</p>
+        <h2 class="ib-h2" data-ib-reveal>Wir sind für Sie da.</h2>
+      </div>
+      <ul class="e-people__list" data-ib-stagger>
+        <li class="e-person" data-ib-item>
+          <div class="e-person__photo"><img src="assets/img/entwurf-e/portrait-1.png" width="330" height="330" alt="Porträt Gabrielle Getzmann" loading="lazy"></div>
+          <h3>Gabrielle Getzmann</h3>
+          <p class="ib-small">Bewohnerintegration</p>
+          <p class="ib-small e-person__meta">Erreichbar: Montag, Dienstag, Donnerstag und Freitag<br><a href="mailto:sekretariat@az-imbruel.ch">E-Mail</a></p>
+        </li>
+        <li class="e-person" data-ib-item>
+          <div class="e-person__photo"><img src="assets/img/entwurf-e/portrait-2.png" width="330" height="330" alt="Porträt Claudia Goldener" loading="lazy"></div>
+          <h3>Claudia Goldener</h3>
+          <p class="ib-small">Bewohneradministration</p>
+          <p class="ib-small e-person__meta">Erreichbar: Montag, Dienstag, Donnerstag und Freitag<br><a href="mailto:sekretariat@az-imbruel.ch">E-Mail</a></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- @endsection -->
+</main>
+
+<!-- @section footer -->
+<footer class="ib-footer">
+  <div class="ib-container ib-footer__inner" data-ib-stagger>
+    <a class="ib-footer__logo" href="#" data-ib-item><img src="assets/img/logo-hell.svg" width="152" height="78" alt="Im Brüel – Startseite"></a>
+    <div class="e-footer__main">
+    <p class="e-footer__claim" data-ib-item>Ein Zuhause seit Generationen.</p>
+    <div class="e-footer__cols">
+    <div class="ib-footer__col" data-ib-item>
+      <h2>Adresse</h2>
+      <address>Alterszentrum «Im Brüel»<br>Pfeffingerstrasse 10<br>4147 Aesch</address>
+    </div>
+    <div class="ib-footer__col" data-ib-item>
+      <h2>Sekretariat</h2>
+      <p>Mo–Mi 08.30–12.00, 14.00–16.30<br>Do 08.30–12.00<br>Fr 08.30–12.00, 14.00–16.00</p>
+    </div>
+    <div class="ib-footer__col" data-ib-item>
+      <h2>Kontakt</h2>
+      <p><a href="tel:+41617563344">061 756 33 44</a><br><a href="mailto:sekretariat@az-imbruel.ch">sekretariat@az-imbruel.ch</a><br><a href="#">Facebook</a> · <a href="#">Instagram</a> · <a href="#">TikTok</a></p>
+    </div>
+    </div>
+    </div>
+  </div>
+</footer>
+<!-- @endsection -->
+
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script defer src="assets/js/ib-core.js?v=202611181259"></script>
+<script defer src="assets/js/ib-angebote.js?v=202611181259"></script>
+<script defer src="assets/js/ib-page-e.js?v=202611181259"></script>
+</body>
+</html>

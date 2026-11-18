@@ -1,0 +1,294 @@
+/* ==========================================================================
+   Im Brüel – Basis: Tokens + gemeinsame Bausteine (beide Entwürfe)
+   Tokens 1:1 aus den Figma-Styles "Im Brüel Webdesign".
+   ========================================================================== */
+
+:root {
+  /* Brand */
+  --ib-green-dark: #1a5048;   /* Brand/Dunkelgrün */
+  --ib-green-light: #50d68d;  /* Brand/Hellgrün */
+  --ib-coral: #f57751;        /* Brand/Koralle */
+  --ib-orange: #fdb557;       /* Brand/Orange */
+  --ib-cream: #fef8f6;        /* Brand/Crème */
+
+  /* Neutral */
+  --ib-white: #ffffff;
+  --ib-text-muted: #4a6661;   /* Neutral/Text gedämpft */
+  --ib-line: #e4e0dc;         /* Neutral/Linie */
+  --ib-placeholder: #d9d3cc;  /* Neutral/Bildplatzhalter */
+  --ib-green-soft: #dcf5e7;   /* Tint/Hellgrün soft */
+  --ib-coral-soft: #fde0d6;   /* Tint/Koralle soft */
+  --ib-bg-warm: var(--ib-cream);
+
+  /* Typografie – Calluna Sans im Theme via Adobe Fonts, Demo: Alegreya Sans */
+  --ib-font: "calluna-sans", "Calluna Sans", "Alegreya Sans", system-ui, sans-serif;
+
+  /* Layout */
+  --ib-container: 1248px;
+  --ib-gutter: 24px;
+  --ib-section-y: 48px;
+  --ib-radius-pill: 999px;
+
+  --ib-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 768px) {
+  :root { --ib-gutter: 48px; --ib-section-y: 64px; }
+}
+
+@media (min-width: 1200px) {
+  :root { --ib-gutter: 96px; --ib-section-y: 80px; }
+}
+
+/* Komponenten unabhängig vom Theme-Reset machen */
+.ib-page,
+.ib-page *,
+.ib-page *::before,
+.ib-page *::after,
+.ib-hero,
+.ib-hero *,
+.ib-angebote,
+.ib-angebote * {
+  box-sizing: border-box;
+}
+
+.ib-page {
+  margin: 0;
+  background: var(--ib-cream);
+  color: var(--ib-green-dark);
+  font: 400 18px/28px var(--ib-font);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+/* :where() hält die Spezifität bei 0, damit Komponenten-Klassen gewinnen */
+:where(.ib-page) :where(img) { max-width: 100%; }
+:where(.ib-page) :where(h1, h2, h3, p, ul, ol, figure, address) { margin: 0; }
+:where(.ib-page) :where(ul, ol) { padding: 0; list-style: none; }
+:where(.ib-page) :where(a) { color: inherit; }
+:where(.ib-page) :where(button) { font: inherit; color: inherit; }
+
+.ib-container {
+  width: 100%;
+  max-width: calc(var(--ib-container) + 2 * var(--ib-gutter));
+  margin-inline: auto;
+  padding-inline: var(--ib-gutter);
+}
+
+.ib-visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Texte, die sich zwischen Mobile- und Desktop-Entwurf unterscheiden */
+@media (max-width: 767px) { .ib-only-desktop { display: none !important; } }
+@media (min-width: 768px) { .ib-only-mobile { display: none !important; } }
+
+/* ---------- Typo-Stile ---------- */
+
+.ib-h2 {
+  font: 700 32px/38px var(--ib-font);
+  letter-spacing: -0.3px;
+  text-wrap: balance;
+}
+
+.ib-h3 {
+  font: 700 20px/28px var(--ib-font);
+}
+
+.ib-overline {
+  font: 400 14px/18px var(--ib-font);
+  letter-spacing: 1.2px;
+}
+
+.ib-small { font: 400 15px/22px var(--ib-font); }
+.ib-label { font: 700 16px/20px var(--ib-font); letter-spacing: 0.2px; }
+
+@media (min-width: 1024px) {
+  .ib-h2 { font-size: 46px; line-height: 52px; letter-spacing: -0.5px; }
+  .ib-h3 { font-size: 26px; line-height: 32px; }
+}
+
+.ib-pill-label {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: var(--ib-radius-pill);
+  background: var(--ib-white);
+  color: var(--ib-green-dark);
+  font: 400 12px/16px var(--ib-font);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* ---------- Buttons ---------- */
+
+.ib-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 26px;
+  border: 0;
+  border-radius: var(--ib-radius-pill);
+  font: 700 16px/20px var(--ib-font);
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.25s var(--ib-ease-out), background-color 0.25s;
+}
+
+.ib-btn:active { transform: scale(0.97); }
+.ib-btn--dark { background: var(--ib-green-dark); color: var(--ib-white) !important; }
+.ib-btn--white { background: var(--ib-white); color: var(--ib-green-dark); }
+.ib-btn--green { background: var(--ib-green-light); color: var(--ib-green-dark); }
+
+/* Pill mit weissem Pfeil-Kreis (Entwurf E) */
+.ib-btn--arrow {
+  padding: 8px 8px 8px 20px;
+}
+
+.ib-btn__arrow {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ib-white);
+  color: var(--ib-green-dark);
+  transition: transform 0.3s var(--ib-ease-out);
+}
+
+.ib-btn__arrow svg { width: 12px; height: 10px; }
+
+@media (hover: hover) {
+  .ib-btn--arrow:hover .ib-btn__arrow { transform: translateX(4px); }
+  .ib-btn--dark:hover { background: #12403a; }
+}
+
+/* ---------- Slider-Steuerung (Pfeile + Punkte) ---------- */
+
+.ib-slider__viewport {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.ib-slider__viewport::-webkit-scrollbar { display: none; }
+.ib-slider__viewport > * { scroll-snap-align: start; flex: none; }
+
+.ib-slider__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ib-slider__btn {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ib-line);
+  color: var(--ib-green-dark);
+  cursor: pointer;
+  transition: transform 0.25s var(--ib-ease-out), opacity 0.25s;
+}
+
+.ib-slider__btn svg { width: 16px; height: 12px; }
+.ib-slider__btn--next { background: var(--ib-green-dark); color: var(--ib-white); }
+.ib-slider__btn:active { transform: scale(0.94); }
+.ib-slider__btn[disabled] { opacity: 0.4; cursor: default; }
+
+.ib-slider__dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ib-slider__dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: var(--ib-line);
+  cursor: pointer;
+  transition: width 0.35s var(--ib-ease-out), background-color 0.35s;
+}
+
+.ib-slider__dot[aria-current="true"] {
+  width: 28px;
+  background: var(--ib-green-dark);
+}
+
+/* ---------- Footer (beide Entwürfe) ---------- */
+
+.ib-footer {
+  background: var(--ib-green-dark);
+  color: var(--ib-cream);
+}
+
+.ib-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-block: 72px;
+}
+
+.ib-footer__logo { display: block; width: 152px; }
+.ib-footer__logo img { display: block; width: 100%; height: auto; }
+
+.ib-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ib-footer__col h2 {
+  color: var(--ib-green-light);
+  font: 400 14px/18px var(--ib-font);
+  letter-spacing: 1.2px;
+}
+
+.ib-footer__col p,
+.ib-footer__col address {
+  font: 400 18px/28px var(--ib-font);
+  font-style: normal;
+}
+
+.ib-footer a { text-decoration: none; }
+.ib-footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (min-width: 1024px) {
+  .ib-footer__inner { flex-direction: row; gap: 64px; }
+  .ib-footer__col { flex: 1 1 0; }
+}
+
+/* ---------- Fokus ---------- */
+
+.ib-page :focus-visible,
+.ib-hero :focus-visible,
+.ib-angebote :focus-visible {
+  outline: 3px solid var(--ib-coral);
+  outline-offset: 3px;
+}
+
+/* ---------- Scroll-Reveal Vorbereitung ----------
+   Elemente mit [data-ib-reveal] / [data-ib-item] werden per GSAP eingeblendet.
+   Kein CSS-Hiding nötig: sie liegen unterhalb des ersten Viewports. */
+
+@media (prefers-reduced-motion: reduce) {
+  .ib-slider__viewport { scroll-behavior: auto; }
+  .ib-btn, .ib-btn__arrow, .ib-slider__dot { transition: none; }
+}
